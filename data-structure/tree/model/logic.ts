@@ -46,7 +46,7 @@ export const TreeIterator = (node: INode) =>
     path: [node.name],
   });
 
-/** Recursive generator witch create tree nodes iterator */
+/** Recursive generator which create tree nodes iterator */
 function* recursiveIterator(treeNode: ITreeNode): IterableIterator<ITreeNode> {
   const children = treeNode.node.children;
   if (children) {
