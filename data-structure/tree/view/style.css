@@ -1,0 +1,109 @@
+/* tree/view/style. Responsible Igor Dubrovin.*/
+:root {
+  --STRING: #79B6F2;
+  --NUMBER: #FC929E;
+  --OBJECT: #09d3ac
+}
+.ds-tree-view.map {
+  width: 100%;
+  height: 100%;
+  background-color: #282c34;
+  overflow: scroll;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.ds-tree-view.map .map-content {
+  position: relative;
+  margin: 10px;
+}
+
+.ds-tree-view.map .node {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #2a2e36;
+  color: #dadada;
+  font-family: courier;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 2px;
+  border-style: solid;
+  opacity:0.9;
+}
+
+.ds-tree-view.map .node.node-type-OBJECT {
+  border-color: var(--OBJECT);
+}
+
+.ds-tree-view.map .node.node-type-OBJECT::after {
+  content: '{}';
+}
+
+.ds-tree-view.map .node.node-type-ARRAY {
+  border-style: dotted;
+}
+
+.ds-tree-view.map .node.node-type-ARRAY::after {
+  content: '[]';
+}
+
+.ds-tree-view.map .node.node-type-NUMBER {
+  border-color: var(--NUMBER);
+}
+
+.ds-tree-view.map .node.node-type-STRING {
+  border-color: var(--STRING);
+}
+
+.ds-tree-view.map .node.array-kind-NUMBER {
+  border-color: var(--NUMBER);
+}
+
+.ds-tree-view.map .node.array-kind-STRING {
+  border-color: var(--STRING);
+}
+
+.ds-tree-view.map .node.array-kind-OBJECT {
+  border-color: var(--OBJECT);
+}
+
+.ds-tree-view.map .title {
+  position: absolute;
+  transform-origin: top left;
+  transform: rotate(-25deg);
+  width: 200px;
+  margin: -4px 0 0 4px;
+  color: #f0f0f0;
+  font-family: courier;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ds-tree-view.map svg.links {
+  width:100%;
+  height: 100%;
+}
+.ds-tree-view.map polyline.link {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke: #09d3ac;
+  stroke-opacity: 0.3;
+}
+
+.ds-tree-view.map::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+.ds-tree-view.map::-webkit-scrollbar {
+  width: 15px;
+  height:15px;
+  background-color: #09d3ac;
+}
+
+.ds-tree-view.map::-webkit-scrollbar-thumb {
+  background-color: #09d3ac;
+}
