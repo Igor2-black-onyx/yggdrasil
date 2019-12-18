@@ -1,4 +1,4 @@
-/* Tree/View/React-Template. Responsible Igor Dubrovin.*/
+/* tree/View/React-Template. Responsible Igor Dubrovin.*/
 
 import React from "react";
 import {
